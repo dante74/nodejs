@@ -188,3 +188,7 @@ add(4, 5)
 // }
 
 // getData().catch(() => console.log("Błąd odczytu danych"));
+
+// Materiały :
+// https://devenv.pl/async-await-podstawy-jezyka-javascript/
+// https://kursjs.pl/kurs/es6/async-await.php
