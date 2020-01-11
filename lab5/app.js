@@ -192,3 +192,32 @@ add(4, 5)
 // Materiały :
 // https://devenv.pl/async-await-podstawy-jezyka-javascript/
 // https://kursjs.pl/kurs/es6/async-await.php
+
+/*  zad 7 */
+const axios = require("axios");
+
+// async function getData() {
+//   try {
+//     const user = await axios.get(
+//       "https://jsonplaceholder.typicode.com/users/2"
+//     );
+//     console.log(user.data.name);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+// getData();
+
+/*   zad 8
+
+*/
+// const axios = require("axios");
+// const userId = [2, 3, 5, 7];
+
+// function getUser(elem) {
+//   return axios
+//     .get(`https://jsonplaceholder.typicode.com/users/${elem}`)
+//     .then(response => response.data.name);
+// }
+
+// Promise.all(userId.map(getUser)).then(user => console.log(user));
