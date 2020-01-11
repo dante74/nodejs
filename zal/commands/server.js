@@ -2,7 +2,7 @@ const fs = require("fs");
 const readFile = require("../readFile");
 const colors = require("colors");
 
-const server = () => {
+const server = fileWithThoughts => {
   const request = require("request");
   const url =
     "http://ec2-18-217-240-10.us-east-2.compute.amazonaws.com/node/quotes.php";
@@ -12,7 +12,7 @@ const server = () => {
       console.log(data);
 
       //--------------
-      let thoughtsList = readFile("thoughtsList.json");
+      let thoughtsList = readFile(fileWithThoughts);
       if (thoughtsList.length == 0) {
         console.log(
           "\n\n Brak pliku z bazą cytatów. Tworzę nowy plik !!!!!! \n".yellow
@@ -28,7 +28,7 @@ const server = () => {
         let id = thoughtsList.length + 1;
         let how = 0;
         thoughtsList.push({ id, quote, author, group, how });
-        fs.writeFileSync("thoughtsList.json", JSON.stringify(thoughtsList));
+        fs.writeFileSync(fileWithThoughts, JSON.stringify(thoughtsList));
       } else {
         console.log(
           "*********  Cytat jest już w bazie  **********".yellow.bold

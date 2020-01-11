@@ -1,8 +1,8 @@
 const readFile = require("../readFile");
 const colors = require("colors");
 
-const print = (author, group, find) => {
-  let thoughtsList = readFile("thoughtsList.json");
+const print = (fileWithThoughts, author, group, find) => {
+  let thoughtsList = readFile(fileWithThoughts);
   if (thoughtsList.length == 0) {
     return console.log("\n\n Brak pliku z bazą cytatów !!!!!! \n".yellow.bold);
   }

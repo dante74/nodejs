@@ -2,8 +2,8 @@ const readFile = require("../readFile");
 const fs = require("fs");
 const colors = require("colors");
 
-const remove = id => {
-  let thoughtsList = readFile("thoughtsList.json");
+const remove = (fileWithThoughts, id) => {
+  let thoughtsList = readFile(fileWithThoughts);
 
   if (thoughtsList.length == 0) {
     return console.log("\n\n Brak pliku z bazą cytatów !!!!!! \n".yellow.bold);
@@ -23,7 +23,7 @@ const remove = id => {
   console.log(
     "\n--------- Usunięto podany rekord z pliku -----------".red.bold
   );
-  fs.writeFileSync("thoughtsList.json", JSON.stringify(filteredList));
+  fs.writeFileSync(fileWithThoughts, JSON.stringify(filteredList));
 };
 
 module.exports = remove;

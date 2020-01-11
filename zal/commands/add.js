@@ -2,16 +2,14 @@ const readFile = require("../readFile");
 const fs = require("fs");
 const colors = require("colors");
 
-
-
-const add = (quote, author, group = "no identified") => {
+const add = (fileWithThoughts, quote, author, group = "no identified") => {
   let how = 0;
-  let thoughtsList = readFile("thoughtsList.json");
+  let thoughtsList = readFile(fileWithThoughts);
   id = thoughtsList.length + 1;
 
   thoughtsList.push({ id, quote, author, group, how });
   console.log(thoughtsList);
 
-  fs.writeFileSync("thoughtsList.json", JSON.stringify(thoughtsList));
+  fs.writeFileSync(fileWithThoughts, JSON.stringify(thoughtsList));
 };
 module.exports = add;
